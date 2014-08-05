@@ -2,10 +2,10 @@ Dockerfile to run AWS CloudWatch Logs container
 ===============================================
 
 MAINTAINERS
----------
+-----------
 
-Ryuta Otaki <otaki.ryuta@classmethod.jp>
-Sergey Zhukov <sergey@jetbrains.com>
+* Ryuta Otaki <otaki.ryuta@classmethod.jp>
+* Sergey Zhukov <sergey@jetbrains.com>
 
 Usage
 =====
@@ -23,7 +23,7 @@ initial_position = start_of_file
 log_group_name = nginx-server
 ```
 
-Environmaent variables
+Environment variables
 ======================
 
 * `AWS_LOGFILE` default is "/mnt/logs/access.log"
@@ -42,6 +42,6 @@ docker run -d --name nginx -v /mnt/logs:/var/log/nginx -p 80:80 sergeyzh/centos6
 docker run -d --name awslogs -e AWS_LOGFILE=/mnt/logs/access.log -e AWS_DURATION=10000 -v /mnt/logs:/mnt/logs sergeyzh/awslogs
 ```
 
-Now you can see access logs of your Nginx at [AWS Console](https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#logs:)
-NOTE: Of course you should run it on the Amazon EC2 and you should set IAM role for you instance according [manual](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/QuickStartEC2Instance.html)
+Now you can see access logs of your Nginx at [AWS Console](https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#logs:). 
+NOTE: Of course you should run it on the Amazon EC2 and you should set IAM role for you instance according [manual](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/QuickStartEC2Instance.html).
 
