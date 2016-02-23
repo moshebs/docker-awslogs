@@ -21,6 +21,9 @@ log_group_name = nginx-server
 * `AWS_LOGFORMAT` default is "%d/%b/%Y:%H:%M:%S %z"
 * `AWS_DURATION` default is "5000"
 * `AWS_GROUPNAME` default is "nginx-server"
+* `AWS_REGION` default is "eu-west-1"
+* `AWS_ACCESS_KEY_ID` no default
+* `AWS_SECRET_ACCESS_KEY` no default
 
 ### Example
 
@@ -29,7 +32,7 @@ log_group_name = nginx-server
 docker run -d --name nginx -v /mnt/logs:/var/log/nginx -p 80:80 sergeyzh/centos6-nginx
 
 # Run container with AWS CloudWatch logs uploader
-docker run -d --name awslogs -e AWS_LOGFILE=/mnt/logs/access.log -e AWS_DURATION=10000 -v /mnt/logs:/mnt/logs sergeyzh/awslogs
+docker run -d --name awslogs -e AWS_LOGFILE=/mnt/logs/access.log -e AWS_DURATION=10000 -e "AWS_SECRET_ACCESS_KEY=mYsEcReTaCcEsSkEy" -e "AWS_ACCESS_KEY_ID=MYACCESSKEYID" -v /mnt/logs:/mnt/logs sergeyzh/awslogs
 ```
 
 Now you can see access logs of your Nginx at [AWS Console](https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#logs:). 

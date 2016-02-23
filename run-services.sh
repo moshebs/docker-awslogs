@@ -22,8 +22,11 @@ LOGFILE=${AWS_LOGFILE:-"/mnt/logs/access.log"}
 LOGFORMAT=${AWS_LOGFORMAT:-"%d/%b/%Y:%H:%M:%S %z"}
 DURATION=${AWS_DURATION:-"5000"}
 GROUPNAME=${AWS_GROUPNAME:-"nginx-server"}
+REGION=${AWS_REGION:-"eu-west-1"}
 
 cp -f /awslogs.conf.dummy /var/awslogs/etc/awslogs.conf
+
+cp -f /aws.conf.dummy /var/awslogs/etc/aws.conf
 
 cat >> /var/awslogs/etc/awslogs.conf <<EOF
 [${LOGFILE}]
@@ -33,6 +36,13 @@ buffer_duration = ${DURATION}
 log_stream_name = {instance_id}
 initial_position = start_of_file
 log_group_name = ${GROUPNAME}
+
+EOF
+
+cat >> /var/awslogs/etc/aws.conf <<EOF
+region = ${REGION}
+aws_access_key_id = ${AWS_ACCESS_KEY_ID}
+aws_secret_access_key = ${AWS_SECRET_ACCESS_KEY}
 
 EOF
 
