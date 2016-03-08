@@ -34,7 +34,7 @@ cat >> /var/awslogs/etc/awslogs.conf <<EOF
 datetime_format = ${LOGFORMAT}
 file = ${LOGFILE}
 buffer_duration = ${DURATION}
-log_stream_name = {instance_id}
+log_stream_name = ${LOGSTREAMNAME}
 initial_position = start_of_file
 log_group_name = ${GROUPNAME}
 
