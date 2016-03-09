@@ -48,6 +48,12 @@ aws_secret_access_key = ${AWS_SECRET_ACCESS_KEY}
 
 EOF
 
+cat >> ~/.aws/config <<EOF
+[default]
+region=${REGION}
+
+EOF
+
 # Trying to create the log group so we can set a policy on it. It will simply fail if the 
 # log group already exists
 aws logs create-log-group --log-group-name ${GROUP_NAME}
