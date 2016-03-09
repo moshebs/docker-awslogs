@@ -48,6 +48,8 @@ aws_secret_access_key = ${AWS_SECRET_ACCESS_KEY}
 
 EOF
 
+mkdir ~/.aws
+
 cat >> ~/.aws/config <<EOF
 [default]
 region=${REGION}
