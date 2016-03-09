@@ -50,10 +50,10 @@ EOF
 
 # Trying to create the log group so we can set a policy on it. It will simply fail if the 
 # log group already exists
-aws logs create-log-group $GROUP
+aws logs create-log-group --log-group-name ${GROUP_NAME}
 
 # Set retention policy
-aws logs put-retention-policy --log-group-name $GROUP --retention-in-days ${LOG_GROUP_RETENTION_POLICY_DAYS}
+aws logs put-retention-policy --log-group-name ${GROUP_NAME} --retention-in-days ${LOG_GROUP_RETENTION_POLICY_DAYS}
 
 /var/awslogs/bin/awslogs-agent-launcher.sh &
 
