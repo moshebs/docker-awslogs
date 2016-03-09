@@ -22,7 +22,7 @@ LOGFILE=${AWS_LOGFILE:-"/mnt/logs/access.log"}
 LOGFORMAT=${AWS_LOGFORMAT:-"%d/%b/%Y:%H:%M:%S %z"}
 DURATION=${AWS_DURATION:-"5000"}
 GROUPNAME=${AWS_GROUPNAME:-"nginx-server"}
-LOGSTREAMNAME=${AWS_LOGSTREAMNAME:-"{instance_id}"}
+LOGSTREAMNAME=${AWS_LOGSTREAMNAME:-'{instance_id}'}
 REGION=${AWS_REGION:-"eu-west-1"}
 
 echo $LOGSTREAMNAME > /var/awslogs/etc/debug.txt
