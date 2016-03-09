@@ -16,7 +16,7 @@ trap shutdown_awslogs INT TERM HUP
 # buffer_duration = 5000
 # log_stream_name = {instance_id}
 # initial_position = start_of_file
-# log_group_name = nginx-server
+# log_group_name = nginx-server       
 
 LOG_FILE=${AWS_LOGFILE:-"/mnt/logs/access.log"}
 LOG_FORMAT=${AWS_LOGFORMAT:-"%d/%b/%Y:%H:%M:%S %z"}
