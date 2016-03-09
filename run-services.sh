@@ -25,6 +25,8 @@ GROUPNAME=${AWS_GROUPNAME:-"nginx-server"}
 LOGSTREAMNAME=${AWS_LOGSTREAMNAME:-"{instance_id}"}
 REGION=${AWS_REGION:-"eu-west-1"}
 
+echo $LOGSTREAMNAME > /var/awslogs/etc/debug.txt
+
 cp -f /awslogs.conf.dummy /var/awslogs/etc/awslogs.conf
 
 cp -f /aws.conf.dummy /var/awslogs/etc/aws.conf
