@@ -21,7 +21,8 @@ log_group_name = nginx-server
 * `AWS_LOGFORMAT` default is "%d/%b/%Y:%H:%M:%S %z"
 * `AWS_DURATION` default is "5000"
 * `AWS_GROUPNAME` default is "nginx-server"
-* `AWS_LOGSTREAMNAME` default is "{instance_id}"
+* `AWS_LOG_STREAM_NAME` default is the EC2 instance ID
+* `AWS_LOG_GROUP_RETENTION_POLICY_DAYS` default is 90 days. Allowed values are documented [here](http://docs.aws.amazon.com/cli/latest/reference/logs/put-retention-policy.html)
 * `AWS_REGION` default is "eu-west-1"
 * `AWS_ACCESS_KEY_ID` no default
 * `AWS_SECRET_ACCESS_KEY` no default
