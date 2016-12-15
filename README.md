@@ -27,7 +27,7 @@ log_group_name = nginx-server
 * `AWS_ACCESS_KEY_ID` no default
 * `AWS_SECRET_ACCESS_KEY` no default
 
-### Example
+### Example 
 
 ```
 # Run container with Nginx
