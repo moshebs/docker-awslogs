@@ -86,14 +86,14 @@ region=${REGION}
 EOF
 
 # Adding default log
-add_log()
+add_log
 
 result=1
 index=1
 
 while [ "$result" == "1" ]
 do
-   result = add_log($index)
+   result = add_log $index 
    index=`expr $index + 1`
 done
 
