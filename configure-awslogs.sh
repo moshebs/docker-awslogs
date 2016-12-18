@@ -23,7 +23,7 @@ add_log()
 	LOG_GROUP_RETENTION_POLICY_DAYS_VAR_NAME=AWS_LOG_GROUP_RETENTION_POLICY_DAYS$1 
 	LOG_GROUP_RETENTION_POLICY_DAYS=${!LOG_GROUP_RETENTION_POLICY_DAYS_VAR_NAME:-'90'}
 	
-cat >> /Users/mosheb/temp/logs/awslogs.conf <<EOF
+cat >> /var/awslogs/etc/awslogs.conf <<EOF
 [${LOG_FILE}]
 datetime_format = ${LOG_FORMAT}
 file = ${LOG_FILE}
