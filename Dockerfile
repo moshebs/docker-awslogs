@@ -8,6 +8,7 @@ RUN pip install awscli --ignore-installed six
 
 ADD awslogs.conf.dummy /
 ADD aws.conf.dummy /
+RUN mkdir /etc/cron.d
 RUN python /awslogs-agent-setup.py -n -r us-east-1 -c ./awslogs.conf.dummy
 # ONBUILD ADD aws.conf       /var/awslogs/etc/aws.conf
 # ONBUILD ADD awslogs.conf /var/awslogs/etc/awslogs.conf
