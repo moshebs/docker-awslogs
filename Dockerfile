@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:16.10
 MAINTAINER Ryuta Otaki <otaki.ryuta@classmethod.jp>, Sergey Zhukov <sergey@jetbrains.com>
 
 RUN apt-get update
