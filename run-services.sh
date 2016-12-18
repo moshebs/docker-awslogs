@@ -93,7 +93,8 @@ index=1
 
 while [ "$result" == "1" ]
 do
-   result = add_log $index 
+   add_log $index
+   result=$?
    index=`expr $index + 1`
 done
 
