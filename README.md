@@ -15,7 +15,11 @@ initial_position = start_of_file
 log_group_name = nginx-server
 ```
 
-### Environment variables
+### Configuration
+
+The container is configured using a set of environment variables.
+
+#### Generic Configuration
 
 * `AWS_LOGFILE` default is "/mnt/logs/access.log"
 * `AWS_LOGFORMAT` default is "%d/%b/%Y:%H:%M:%S %z"
