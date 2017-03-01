@@ -43,6 +43,7 @@ Per log file, the other variables are optional.
 * `AWS_GROUPNAME<X>` - Specifies the destination log group, default is "nginx-server"
 * `AWS_LOG_STREAM_NAME<X>` - Specifies the destination log stream, default is the EC2 instance ID.
 * `AWS_LOG_GROUP_RETENTION_POLICY_DAYS<X>` - The retention policy of the log group. This variable is takes effect if and only if the log group does not yet exist and is initialized by the log collecting container. The default is 90 days. Allowed values are documented [here](http://docs.aws.amazon.com/cli/latest/reference/logs/put-retention-policy.html)
+* `AWS_MULTI_LINE_START_PATTERN<X>` - Specifies the pattern for identifying the start of a log message. The default value is ‘^[^\s]' so any line that begins with non-whitespace character closes the previous log message and starts a new log message.
 
 ### Example 
 

@@ -23,6 +23,9 @@ add_log()
 	LOG_GROUP_RETENTION_POLICY_DAYS_VAR_NAME=AWS_LOG_GROUP_RETENTION_POLICY_DAYS$1 
 	LOG_GROUP_RETENTION_POLICY_DAYS=${!LOG_GROUP_RETENTION_POLICY_DAYS_VAR_NAME:-'90'}
 	
+	MULTI_LINE_START_PATTERN_VAR_NAME=AWS_MULTI_LINE_START_PATTERN$1
+	MULTI_LINE_START_PATTERN=${!MULTI_LINE_START_PATTERN_VAR_NAME:-'^[^\s]'}
+	
 cat >> /var/awslogs/etc/awslogs.conf <<EOF
 [${LOG_FILE}]
 datetime_format = ${LOG_FORMAT}
@@ -31,6 +34,7 @@ buffer_duration = ${DURATION}
 log_stream_name = ${LOG_STREAM_NAME}
 initial_position = start_of_file
 log_group_name = ${GROUP_NAME}
+multi_line_start_pattern = ${MULTI_LINE_START_PATTERN}
 
 EOF
 
