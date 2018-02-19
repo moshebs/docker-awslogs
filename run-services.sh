@@ -15,6 +15,14 @@ cp -f /awslogs.conf.dummy /var/awslogs/etc/awslogs.conf
 
 cp -f /aws.conf.dummy /var/awslogs/etc/aws.conf
 
+if [ "${AWS_ACCESS_KEY_ID}" == "" ] || [ "${AWS_ACCESS_KEY_ID}" == "" ]; then
+
+cat >> /var/awslogs/etc/aws.conf <<EOF
+region = ${REGION}
+
+EOF
+
+else
 
 cat >> /var/awslogs/etc/aws.conf <<EOF
 region = ${REGION}
@@ -22,6 +30,8 @@ aws_access_key_id = ${AWS_ACCESS_KEY_ID}
 aws_secret_access_key = ${AWS_SECRET_ACCESS_KEY}
 
 EOF
+
+fi
 
 mkdir ~/.aws
 
