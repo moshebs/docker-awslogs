@@ -23,9 +23,9 @@ The container is configured using a set of environment variables.
 
 The following environment variables are generic and used for all collected logs:
 
-* `AWS_REGION` default is "eu-west-1"
-* `AWS_ACCESS_KEY_ID` no default
-* `AWS_SECRET_ACCESS_KEY` no default
+* `AWS_REGION` - default is "eu-west-1"
+* `AWS_ACCESS_KEY_ID` - no default, not mandatory (e.g. when using Ec2 instance roles)
+* `AWS_SECRET_ACCESS_KEY` no default, not mandatory (e.g. when using Ec2 instance roles)
 
 #### Per-log configuration
 
