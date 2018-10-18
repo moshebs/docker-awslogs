@@ -2,10 +2,11 @@ FROM ubuntu:16.04
 MAINTAINER Ryuta Otaki <otaki.ryuta@classmethod.jp>, Sergey Zhukov <sergey@jetbrains.com>
 
 RUN apt-get update
-RUN apt-get install logrotate
 RUN apt-get install -q -y python python-pip wget
 RUN cd / ; wget https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py
 RUN pip install awscli --ignore-installed six
+
+RUN apt-get install logrotate
 
 ADD awslogs.conf.dummy /
 ADD aws.conf.dummy /
