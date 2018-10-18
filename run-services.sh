@@ -46,6 +46,8 @@ EOF
 echo "AWS log config is:"
 cat /var/awslogs/etc/awslogs.conf
 
+/usr/sbin/cron
+
 /var/awslogs/bin/awslogs-agent-launcher.sh &
 
 wait
