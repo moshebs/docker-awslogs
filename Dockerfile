@@ -12,8 +12,6 @@ RUN python /awslogs-agent-setup.py -n -r us-east-1 -c ./awslogs.conf.dummy
 # ONBUILD ADD aws.conf       /var/awslogs/etc/aws.conf
 # ONBUILD ADD awslogs.conf /var/awslogs/etc/awslogs.conf
 
-RUN sed -i /restart/d /etc/logrotate.d/awslogs
-
 ADD run-services.sh /
 ADD configure-awslogs.sh /
 ADD run-awslogs-agent.sh /
