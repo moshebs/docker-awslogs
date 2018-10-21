@@ -48,6 +48,6 @@ cat /var/awslogs/etc/awslogs.conf
 
 /usr/sbin/cron
 
-/var/awslogs/bin/awslogs-agent-launcher.sh &
+/run-awslogs-agent.sh &
 
 wait

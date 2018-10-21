@@ -16,5 +16,6 @@ RUN sed -i /restart/d /etc/logrotate.d/awslogs
 
 ADD run-services.sh /
 ADD configure-awslogs.sh /
+ADD run-awslogs-agent.sh /
 RUN chmod a+x /run-services.sh
 CMD /run-services.sh
