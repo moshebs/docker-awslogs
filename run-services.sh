@@ -51,3 +51,10 @@ cat /var/awslogs/etc/awslogs.conf
 /run-awslogs-agent.sh &
 
 wait
+
+cat >> /tmp/blabla << EOF
+now
+EOF
+
+/var/awslogs/bin/awslogs-agent-launcher.sh &
+wait

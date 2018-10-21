@@ -18,4 +18,5 @@ ADD run-services.sh /
 ADD configure-awslogs.sh /
 ADD run-awslogs-agent.sh /
 RUN chmod a+x /run-services.sh
+RUN chmod a+x /run-awslogs-agent.sh
 CMD /run-services.sh
